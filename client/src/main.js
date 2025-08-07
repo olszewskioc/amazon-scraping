@@ -17,8 +17,8 @@ document.getElementById('searchBtn').addEventListener('click', () => {
   if (!keyword) return alert('Please enter a keyword');
   fetchProducts(keyword)
   .then(products => {
-      console.log(products)
-      renderResults(products.products)
+      // Render the scrapped products in the page
+      renderResults(products.products); // The Response is a JSON, so needeed to access the products property
     })
     .catch(err => {
       alert('Error fetching products.');

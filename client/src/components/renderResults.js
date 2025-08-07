@@ -1,3 +1,4 @@
+// Render the products cards in the page, if don't find any products, render a message
 export function renderResults(products) {
   const container = document.getElementById('results');
   container.innerHTML = '';

@@ -1,3 +1,4 @@
+// Put CORS headers in the requests/response to access the API from a web page
 export function withCors(handler: (req: Request) => Promise<Response> | Response) {
   return async (req: Request): Promise<Response> => {
     if (req.method === "OPTIONS") {

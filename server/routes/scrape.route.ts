@@ -1,6 +1,7 @@
 import { scrapeAmazon } from "../services/scrapeAmazon";
 
 export async function scrapeRoute(req: Request): Promise<Response> {
+  // Catch URL and Keyword in the Request
   const url = new URL(req.url);
   const keyword = url.searchParams.get("keyword");
 
@@ -8,6 +9,7 @@ export async function scrapeRoute(req: Request): Promise<Response> {
     return Response.json({ error: "Missing 'keyword' parameter" }, { status: 400 });
   }
 
+  // Try send to the service and return Response JSON to client
   try {
     const products = await scrapeAmazon(keyword);
     return Response.json({ products });

@@ -1,5 +1,6 @@
 import { routes } from "./routes";
 
+// Using Bun.serve to be more faster and dynamic in organize the code
 const server = Bun.serve({
   port: 3001,
   routes,
